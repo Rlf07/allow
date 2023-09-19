@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #763D16;
+}
+
+.container {
+  width: 100%;
+}
+
+
+.right-column {
+  float: right;
+  width: 70%;
+}
+
+h1 {
+  font-size: 70px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: white;
+  margin-top: 20%;
+  margin-bottom: -25px;
+  letter-spacing: 15px;
+
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 5px;
+
+}
+
+button  {
+  background-color: #BFA364;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 23.333px;
+  border-radius: 9px;
+  background: #BFA364;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 273px;
+  height: 61px;
+  border: none;
+  align-items: center;
+  margin-top: 20%;
+}
+
+
+p {
+  text-align: center;
+  color: #2f1a1a;
+  font-family: Roboto;
+  font-size: 12px;
+}
+
+h2 {
+  text-align: center;
+  color: #E4751F;
+  font-family: Roboto;
+  font-size: 71.38px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 20%;
+}
+hr{
+  width: 50%;
+  margin-top: -5%;
+}
+#text-frase{
+  color: #763D16;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.form-container input {
+  margin-bottom: 10px;
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 300Px;
+  height: 49px;
+  border-radius: 6px;
+  background: #BFA364;
+  border: none;
+
+}
+
+.email-icon {
+  background: url('public\images\login.svg');
+}
+
+.password-icon {
+  background: url('public\images\senha.svg');
+}
+
+h4 {
+  text-align: center;
+  color: rgba(73, 73, 73, 0.67);
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+a {
+  color: #E2761B;
+}
+
+#botao-log {
+  background: #E2761B;
+  width: 183px;
+  height: 50px;
+  margin-top: 2%;
+  margin-left: 35%;
+}
+
+button #img-log {
+  margin-top: 5px;
+}
