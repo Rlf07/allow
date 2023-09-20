@@ -3,7 +3,6 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
 import Feedback from "./pages/Feedback";
 import {
   getUsers,
@@ -16,7 +15,7 @@ import Login from "./pages/Login";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Feedback />,
+    element: <Login />,
   },
   // {
   //   path: "/home",

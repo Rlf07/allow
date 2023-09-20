@@ -1,6 +1,8 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { addFeedback, getFeedbacks } from "../services/web_api";
+import Navbar from "../navbar.jsx";
+import { red } from "@mui/material/colors";
 
 export default function Home() {
   const [feedbackResuilt, setFeedbackResult] = useState([]); // Estado para armazenar o resultado da pesquisa
@@ -45,80 +47,101 @@ export default function Home() {
   };
 
   return (
-    <Stack
-      sx={{ height: "100vh" }}
-      justifyContent="space-evenly"
-      alignItems="center"
-    >
+    <>
+      <Navbar></Navbar>
       <Stack
-        sx={{ padding: "0 24px" }}
-        direction="row"
-        spacing={2}
+        sx={{ height: "100vh" }}
+        justifyContent="space-evenly"
         alignItems="center"
       >
-        <TextField
-          name="id"
-          label="Id"
-          variant="outlined"
-          onChange={onChange}
-          value={inputsData["id"]}
-        />
-        <TextField
-          name="user_name"
-          label="Nome do usuario"
-          variant="outlined"
-          onChange={onChange}
-          value={inputsData["user_name"]}
-        />
-        <TextField
-          name="classificacao"
-          label="Classificacao"
-          variant="outlined"
-          onChange={onChange}
-          value={inputsData["classificacao"]}
-        />
-        <TextField
-          name="title"
-          label="Titulo"
-          variant="outlined"
-          onChange={onChange}
-          value={inputsData["title"]}
-        />
-        <TextField
-          name="description"
-          label="Descricao"
-          variant="outlined"
-          onChange={onChange}
-          value={inputsData["description"]}
-        />
-        {/* <Button onClick={handleListFeedback}>Lista feedback</Button> */}
-      </Stack>
-      <Button onClick={addFeedbackLocal}>Add feedback</Button>
-      {isAdmin && (
-        <Button
-          onClick={() => {
-            localStorage.setItem("feedbackData", []);
-            setFeedbackResult([]);
-          }}
+        <Stack
+          sx={{ padding: "0 24px" }}
+          direction="row"
+          spacing={2}
+          alignItems="center"
         >
-          Limpar feedbacks
+          <TextField
+            name="id"
+            label="Id"
+            variant="outlined"
+            onChange={onChange}
+            value={inputsData["id"]}
+          />
+          <TextField
+            name="user_name"
+            label="Nome do usuario"
+            variant="outlined"
+            onChange={onChange}
+            value={inputsData["user_name"]}
+          />
+          <TextField
+            name="classificacao"
+            label="Classificacao"
+            variant="outlined"
+            onChange={onChange}
+            value={inputsData["classificacao"]}
+          />
+          <TextField
+            name="title"
+            label="Titulo"
+            variant="outlined"
+            onChange={onChange}
+            value={inputsData["title"]}
+          />
+          <TextField
+            name="description"
+            label="Descricao"
+            variant="outlined"
+            onChange={onChange}
+            value={inputsData["description"]}
+          />
+          {/* <Button onClick={handleListFeedback}>Lista feedback</Button> */}
+        </Stack>
+        <Button
+          sx={{
+            background: "#E2761B",
+            width: "183px",
+            height: "50px",
+            color: "white",
+            ":hover": { background: "#BFA364" },
+          }}
+          onClick={addFeedbackLocal}
+        >
+          Add feedback
         </Button>
-      )}
-      <Stack sx={{ height: "60%", width: "100%", overflowY: "auto" }}>
-        {isAdmin &&
-          feedbackResuilt.map((feedback) => (
-            <Stack
-              key={feedback.id}
-              direction="row"
-              justifyContent="space-evenly"
-              alignItems="center"
-            >
-              <Typography>ID: {feedback.id}</Typography>
-              <Typography>Name: {feedback.user_name}</Typography>
-              <Typography>Descricao: {feedback.description}</Typography>
-            </Stack>
-          ))}
+        {isAdmin && (
+          <Button
+            sx={{
+              background: "#E2761B",
+              width: "183px",
+              height: "50px",
+              color: "white",
+              ":hover": { background: "#BFA364" },
+            }}
+            onClick={() => {
+              localStorage.setItem("feedbackData", []);
+              setFeedbackResult([]);
+            }}
+          >
+            Limpar feedbacks
+          </Button>
+        )}
+        <Stack sx={{ height: "60%", width: "100%", overflowY: "auto" }}>
+          {isAdmin &&
+            feedbackResuilt.map((feedback) => (
+              <Stack
+                key={feedback.id}
+                direction="row"
+                justifyContent="space-evenly"
+                alignItems="center"
+              >
+                <Typography>ID: {feedback.id}</Typography>
+                <Typography>Name: {feedback.user_name}</Typography>
+                <Typography>Descricao: {feedback.description}</Typography>
+              </Stack>
+            ))}
+        </Stack>
       </Stack>
-    </Stack>
+    </>
   );
 }

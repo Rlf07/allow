@@ -12,18 +12,16 @@
 body {
   margin: 0;
   overflow: hidden;
-  background-color: #763D16;
+  background-color: #e6e1de;
 }
-
+.background-menu{
+  background-color: red;
+}
 .container {
   width: 100%;
 }
 
 
-.right-column {
-  float: right;
-  width: 70%;
-}
 
 h1 {
   font-size: 70px;
@@ -43,20 +41,6 @@ h3 {
 
 }
 
-button  {
-  background-color: #BFA364;
-  color: #FFF;
-  font-family: Roboto;
-  font-size: 23.333px;
-  border-radius: 9px;
-  background: #BFA364;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 273px;
-  height: 61px;
-  border: none;
-  align-items: center;
-  margin-top: 20%;
-}
 
 
 p {

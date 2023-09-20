@@ -1,6 +1,7 @@
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { userAutorize } from "../services/web_api";
+import { red } from "@mui/material/colors";
 
 export default function Login() {
   const [emailText, setEmailText] = useState(""); // Estado para armazenar o texto de pesquisa
@@ -48,7 +49,17 @@ export default function Login() {
             onChange={(e) => setPassText(e.target.value)}
           />
         </Stack>
-        <Button onClick={autorize}>Login</Button>
+        <Button
+          sx={{
+            width: "280px",
+            height: "60px",
+            background: "#E47616",
+            fontSize: "20px",
+          }}
+          onClick={autorize}
+        >
+          Login
+        </Button>
       </Stack>
     </>
   );
